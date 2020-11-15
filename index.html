@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<meta name="viewport" content="width=device-width"/>
+	<title>Product App</title>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+	<div class="nav-bar"></div>
+	<div id="app">
+		<div class="product">
+			<div class="product-image">
+				<!-- v-bind dynamically binds an atribute to an expression-->>
+				<img v-bind:src="image">
+			</div>
+			<div class="product-info">
+				<h1>{{ product }}</h1>
+				<a :href="url" target="_blank">View socks on Etsy</a>
+			</div>
+		</div> 
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="script.js"></script>
+</body>
+</html>
