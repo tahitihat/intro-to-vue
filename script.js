@@ -9,12 +9,23 @@ var app = new Vue({
         variants: [
             {
                 variantId: 2234,
-                variantColor: 'James Webb Telescope'
+                variantColor: 'James Webb Telescope',
+                variantImage: './assets/jwt-Socks.jpg'
             },
             {
                 variantId: 2235,
-                variantColor: 'Space Shuttle'
+                variantColor: 'Space Shuttle',
+                variantImage: './assets/ss-Socks.jpg'
             }
-        ]
+        ],
+        cart: 1
+    },
+    methods: {
+        addToCart() {
+            this.cart += 1;
+        },
+        updateProduct(img) {
+            this.image = img;
+        }
     }
 });
