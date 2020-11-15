@@ -34,7 +34,7 @@ body {
   }
   
   .color-box {
-    width: 40px;
+    width: 100px;
     height: 40px;
     margin-top: 5px;
   }
@@ -86,4 +86,8 @@ body {
   .activeTab {
     color: #16C0B0;
     text-decoration: underline;
+  }
+
+  .outOfStock {
+    text-decoration: line-through;
   }
