@@ -10,12 +10,15 @@
 	<div id="app">
 		<div class="product">
 			<div class="product-image">
-				<!-- v-bind dynamically binds an atribute to an expression-->>
 				<img v-bind:src="image">
 			</div>
 			<div class="product-info">
 				<h1>{{ product }}</h1>
 				<a :href="url" target="_blank">View socks on Etsy</a>
+				<p v-show="organic">100% organic</p>
+				<p v-if="inventory > 10">In Stock</p>
+				<p v-else-if="inventory <= 10 && inventory > 0">Low supply</p>
+				<p v-else>Out of Stock</p>
 			</div>
 		</div> 
 	</div>
