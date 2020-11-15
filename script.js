@@ -34,11 +34,6 @@ Vue.component('product', {
 					:class="{ disabledButton: !inStock }"
 				>
 				Add to Cart</button>
-
-				<div class="cart">
-					<p>Cart ({{ cart }})</p>
-				</div>
-
 			</div>
 		</div> 
     `,
@@ -64,13 +59,12 @@ Vue.component('product', {
                     variantImage: './assets/ss-Socks.jpg',
                     variantQuantity: 0
                 }
-            ],
-            cart: 1
+            ]
         }
     },
     methods: {
         addToCart() {
-            this.cart += 1;
+            this.$emit("add-to-cart", this.variants[this.selectedVariant].variantId)
         },
         updateProduct(idx) {
             this.selectedVariant = idx;
@@ -109,6 +103,12 @@ Vue.component('product-details', {
 var app = new Vue({
     el: '#app',
     data: {
-        premium: true
+        premium: true,
+        cart: []
+    },
+    methods: {
+        updateCart(id) { 
+            this.cart.push(id);
+        }
     }
 });
